@@ -158,8 +158,8 @@
    <field name="links" type="string" indexed="true" stored="true" multiValued="true"/>
    <!-- prrla non DC fields start-->
 
-   <field name="decade" type="string" indexed="true" stored="true" multiValued="false"/>
-
+    <field name="sort_decade" type="string" indexed="true" stored="true" multiValued="false"/>
+<field name="decade" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="first_title" type="lowercase_prrla" indexed="true" stored="true" multiValued="false"/>
 
 

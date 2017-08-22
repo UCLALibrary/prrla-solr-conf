@@ -1770,9 +1770,14 @@
        <str name="dest">decade</str>
      </processor>
 
+       <processor class="solr.CloneFieldUpdateProcessorFactory">
+       <str name="source">date_keyword</str>
+       <str name="dest">sort_decade</str>
+     </processor>
+
        <processor class="solr.processor.FirstFieldValueUpdateProcessorFactory">
 
-         <str name="fieldName">decade</str>
+         <str name="fieldName">sort_sdecade</str>
 
        </processor>
        <processor class="solr.LogUpdateProcessorFactory" />
