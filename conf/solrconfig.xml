@@ -1777,7 +1777,7 @@
 
        <processor class="solr.processor.FirstFieldValueUpdateProcessorFactory">
 
-         <str name="fieldName">sort_sdecade</str>
+         <str name="fieldName">sort_decade</str>
 
        </processor>
        <processor class="solr.LogUpdateProcessorFactory" />
