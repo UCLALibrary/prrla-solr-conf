@@ -160,7 +160,7 @@
 
     <field name="sort_decade" type="string" indexed="true" stored="true" multiValued="false"/>
 <field name="decade" type="string" indexed="true" stored="true" multiValued="true"/>
-   <field name="first_title" type="lowercase_prrla" indexed="true" stored="true" multiValued="false"/>
+   <field name="first_title" type="prrla_facet" indexed="true" stored="true" multiValued="false"/>
 
 
    <field name="thumbnail_url" type="string" indexed="true" stored="true" />
@@ -181,14 +181,14 @@
 
    <field name="prrla_member_longitude" type="string" indexed="true" stored="true" />
 
-   <field name="collectionName" type="lowercase_prrla" indexed="true" stored="true" />
+   <field name="collectionName" type="prrla_facet" indexed="true" stored="true" />
 
-   <field name="institutionName" type="lowercase_prrla" indexed="true" stored="true" />
+   <field name="institutionName" type="prrla_facet" indexed="true" stored="true" />
 
-   <field name="type_keyword" type="lowercase_prrla" indexed="true" stored="true" multiValued="true"/>
+   <field name="type_keyword" type="prrla_facet" indexed="true" stored="true" multiValued="true"/>
 
-   <field name="creator_keyword" type="lowercase_prrla" indexed="true" stored="true" multiValued="true"/>
- <field name="title_keyword" type="lowercase_prrla" indexed="true" stored="true" multiValued="true"/>
+   <field name="creator_keyword" type="prrla_facet" indexed="true" stored="true" multiValued="true"/>
+ <field name="title_keyword" type="prrla_facet" indexed="true" stored="true" multiValued="true"/>
 
    <!-- Main body of document extracted by SolrCell.
         NOTE: This field is not indexed by default, since it is also copied to "text"
@@ -757,10 +757,10 @@
       </analyzer>
     </fieldType>
 
-<fieldType name="lowercase_prrla" class="solr.TextField" positionIncrementGap="100">
+<fieldType name="prrla_facet" class="solr.TextField" positionIncrementGap="100">
       <analyzer>
         <tokenizer class="solr.KeywordTokenizerFactory"/>
-        <filter class="solr.LowerCaseFilterFactory" />
+       <!-- <filter class="solr.LowerCaseFilterFactory" /> -->s
     <filter class="solr.TrimFilterFactory" />
     </analyzer>
     </fieldType>
