@@ -58,7 +58,7 @@
    #end
 
   ## Title, hyperlinked
-  <a href='http://localhost:8983/solr/collection1/select?q=id:"${url}"' target="_blank">
+  <a href='http://test-solr.library.ucla.edu/solr/prrla/select?q=id:"${url}"' target="_blank">
     <b>$title</b></a>
 
   ## Link for MLT / More Like This / Find Similar
