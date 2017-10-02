@@ -213,7 +213,7 @@
 #if($doc.getFieldValue('source_keyword'))
 <div>
   #set($sources = $doc.getFieldValue('source_keyword'))
-    <b>Type</b>:
+    <b>Source</b>:
     <div>
     ##field('source_keyword')
     #foreach($source in $sources)
@@ -304,7 +304,7 @@
 ##  Institution
 #if($doc.getFieldValue('institutionName'))
   <div>
-    Institution:
+    <b>Institution</b>:
     #field('institutionName')
   </div>
 #end
@@ -312,7 +312,7 @@
 ## Collection
 #if($doc.getFieldValue('collectionName'))
   <div>
-    Collection:
+    <b>Collection</b>:
     #field('collectionName')
   </div>
 #end
