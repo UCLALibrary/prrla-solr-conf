@@ -72,12 +72,14 @@
        The examples below can be used to load some solr-contribs along
        with their external dependencies.
     -->
- <!-- DataImportHandler test -->
-  <lib dir="../dist/" regex="solr-dataimporthandler-.*\.jar" />
-  <!-- local
-  <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-dataimporthandler-.*\.jar" />
--->
-<!--
+  <lib dir="${solr.install.dir:../../..}/contrib/analysis-extras/lib" regex="icu4j-.*\.jar" />
+  <lib dir="${solr.install.dir:../../..}/contrib/analysis-extras/lucene-libs" regex="lucene-analyzers-icu-.*\.jar" />
+  <lib dir="${solr.install.dir:../../..}/contrib/velocity/lib" regex=".*\.jar" />
+
+  <lib dir="${solr.install.dir:../../..}/dist/" regex="solr-dataimporthandler-.*\.jar" />
+  <lib dir="${solr.install.dir:../../..}/dist/" regex="solr-velocity-\d.*\.jar" />
+
+  <!--
   <lib dir="${solr.install.dir:../../..}/contrib/extraction/lib" regex=".*\.jar" />
   <lib dir="${solr.install.dir:../../..}/dist/" regex="solr-cell-\d.*\.jar" />
 
@@ -86,12 +88,7 @@
 
   <lib dir="${solr.install.dir:../../..}/contrib/langid/lib/" regex=".*\.jar" />
   <lib dir="${solr.install.dir:../../..}/dist/" regex="solr-langid-\d.*\.jar" />
-
--->
-
-  <lib dir="${solr.install.dir:../../..}/contrib/velocity/lib" regex=".*\.jar" />
-  <lib dir="${solr.install.dir:../../..}/dist/" regex="solr-velocity-\d.*\.jar" />
-
+  -->
 
   <!-- an exact 'path' can be used instead of a 'dir' to specify a
        specific jar file.  This will cause a serious error to be logged
@@ -100,6 +97,7 @@
   <!--
      <lib path="../a-jar-that-does-not-exist.jar" />
   -->
+
 
   <!-- Data Directory
 
