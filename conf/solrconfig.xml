@@ -1751,7 +1751,8 @@
     -->
 
     <!-- First Field value  for sorting from muti Valued  field
-
+           and truncate source values , Fix org.apache.lucene.util.BytesRefHash$MaxBytesLengthExceededException: 
+           bytes can be at most 32766 in length; got 217640
     -->
 
      <updateRequestProcessorChain name="updateSourceValues">
