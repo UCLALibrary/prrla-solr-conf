@@ -1271,7 +1271,7 @@
   <requestHandler name="/dataimport" class="org.apache.solr.handler.dataimport.DataImportHandler">
     <lst name="defaults">
     <str name="config">xml-data-config.xml</str>
-    <str name="update.chain">updateSourceValues</str>
+    <str name="update.chain">updateDataImportSourceValues</str>
   </lst>
   </requestHandler>
 
@@ -1756,6 +1756,16 @@
     -->
 
      <updateRequestProcessorChain name="updateSourceValues">
+
+      <processor class="solr.TruncateFieldUpdateProcessorFactory">
+        <str name="typeClass">solr.StrField</str>
+        <int name="maxLength">32766</int>
+      </processor>
+       <processor class="solr.LogUpdateProcessorFactory" />
+       <processor class="solr.RunUpdateProcessorFactory" />
+     </updateRequestProcessorChain>
+
+     <updateRequestProcessorChain name="updateDataImportSourceValues">
 
       <processor class="solr.TruncateFieldUpdateProcessorFactory">
         <str name="typeClass">solr.StrField</str>
