@@ -1271,7 +1271,6 @@
   <requestHandler name="/dataimport" class="org.apache.solr.handler.dataimport.DataImportHandler">
     <lst name="defaults">
     <str name="config">xml-data-config.xml</str>
-    <str name="update.chain">updateDataImportSourceValues</str>
   </lst>
   </requestHandler>
 
@@ -1761,43 +1760,6 @@
         <str name="typeClass">solr.StrField</str>
         <int name="maxLength">32766</int>
       </processor>
-       <processor class="solr.LogUpdateProcessorFactory" />
-       <processor class="solr.RunUpdateProcessorFactory" />
-     </updateRequestProcessorChain>
-
-     <updateRequestProcessorChain name="updateDataImportSourceValues">
-
-      <processor class="solr.TruncateFieldUpdateProcessorFactory">
-        <str name="typeClass">solr.StrField</str>
-        <int name="maxLength">32766</int>
-      </processor>
-
-      <processor class="solr.CloneFieldUpdateProcessorFactory">
-       <str name="source">title_keyword</str>
-       <str name="dest">first_title</str>
-     </processor>
-
-       <processor class="solr.processor.FirstFieldValueUpdateProcessorFactory">
-
-         <str name="fieldName">first_title</str>
-
-       </processor>
-
-       <processor class="solr.CloneFieldUpdateProcessorFactory">
-       <str name="source">date_keyword</str>
-       <str name="dest">decade</str>
-     </processor>
-
-       <processor class="solr.CloneFieldUpdateProcessorFactory">
-       <str name="source">date_keyword</str>
-       <str name="dest">sort_decade</str>
-     </processor>
-
-       <processor class="solr.processor.FirstFieldValueUpdateProcessorFactory">
-
-         <str name="fieldName">sort_decade</str>
-
-       </processor>
        <processor class="solr.LogUpdateProcessorFactory" />
        <processor class="solr.RunUpdateProcessorFactory" />
      </updateRequestProcessorChain>
