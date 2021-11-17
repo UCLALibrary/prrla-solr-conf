@@ -4,12 +4,15 @@
 
 FROM solr4
 
-ENV core_dir example/solr/prl
+ARG CORE_DIR=example/solr/prl
+ARG CORE_NAME=prl
+
 USER solr
 
-RUN mkdir -p ${core_dir}
-WORKDIR ${core_dir}
+RUN mkdir -p ${CORE_DIR}
+WORKDIR ${CORE_DIR}
 
 RUN mkdir data
+RUN echo "name=${CORE_NAME}" > core.properties
+
 COPY --chown=solr conf conf
-COPY --chown=solr core.properties core.properties
